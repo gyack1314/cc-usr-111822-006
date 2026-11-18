@@ -1,11 +1,9 @@
-# 跨场景试验指标分析
+# 机器人跨场景试验
 
-项目保存跨场景试验的来源版次，按资料取得时间比较单期指标并给出区域规则判断。evidence 保存来源，metrics 计算同口径偏离，context 解释当前区域规则，report 保存报告。现有实现尚不处理跨期与跨空间的综合分析。样本是合成数据。
+项目按来源版本保存业务资料，已有 scenarios、outcomes、acceptance 环节。现有场景定义、试验结果与验收汇总只做场景内计数，尚未判定不同配置与人工接管下的泛化可比性。
 
-Python 3.11 以上，在项目根目录执行：
+运行与检查：
 
     python -m unittest discover -s tests -v
-    python -m compileall -q apec_analysis tests
-    python -m apec_analysis.cli inspect data/example.json
-
-Dockerfile 可在 Linux 容器运行：docker build -t apec-analysis-006 .；docker run --rm apec-analysis-006。
+    python -m compileall -q robot_trial tests
+    python -m robot_trial.cli data/example.json
